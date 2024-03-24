@@ -12,8 +12,8 @@ CREATE TABLE domicilio (
 id_domicilio INT NOT NULL AUTO_INCREMENT  PRIMARY KEY
 , calle VARCHAR(70) NOT NULL
 , altura VARCHAR(10) NOT NULL
-, piso VARCHAR(10) NOT NULL
-, unidad VARCHAR(10) NOT NULL
+, piso VARCHAR(10) 
+, unidad VARCHAR(10)
 , paralela_uno VARCHAR(70)
 , paralela_dos VARCHAR(70)
 , observaciones VARCHAR(100)
