@@ -6,6 +6,7 @@ id_cliente INT NOT NULL AUTO_INCREMENT  PRIMARY KEY
 , apellido VARCHAR(70) NOT NULL
 , email VARCHAR(70) UNIQUE NOT NULL
 , telefono VARCHAR(70) NOT NULL
+, ruc CHAR(8) UNIQUE NOT NULL
 );
 
 CREATE TABLE domicilio (
@@ -17,7 +18,7 @@ id_domicilio INT NOT NULL AUTO_INCREMENT  PRIMARY KEY
 , paralela_uno VARCHAR(70)
 , paralela_dos VARCHAR(70)
 , observaciones VARCHAR(100)
-, id_cliente INT
+, id_cliente INT 
 );
 
 CREATE TABLE aroma (
@@ -33,20 +34,14 @@ id_tipo_vela INT NOT NULL AUTO_INCREMENT PRIMARY KEY
 );
 
 
-CREATE TABLE aroma (
-id_aroma INT NOT NULL AUTO_INCREMENT PRIMARY KEY
-, nombre_aroma VARCHAR(70) NOT NULL
-, disponible TINYINT  NOT NULL
-);
-
 CREATE TABLE producto (
 id_producto INT NOT NULL AUTO_INCREMENT  PRIMARY KEY
 , nombre VARCHAR(70) NOT NULL
 , descripcion VARCHAR(150) NOT NULL
 , precio DECIMAL(15,3) NOT NULL
 , stock INT  NOT NULL
-, id_tipo_vela INT 
-, id_aroma INT
+, id_tipo_vela INT  
+, id_aroma INT 
 );
 
 
@@ -65,7 +60,7 @@ id_estado_pedido INT NOT NULL AUTO_INCREMENT  PRIMARY KEY
 CREATE TABLE pedido (
 id_pedido INT NOT NULL AUTO_INCREMENT  PRIMARY KEY
 , id_cliente INT 
-, id_estado_pedido INT 
+, id_estado_pedido INT  
 , fecha DATETIME DEFAULT NOW()
 );
 
